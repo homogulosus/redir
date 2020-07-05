@@ -1,6 +1,3 @@
-let s:cpo_save = &cpo
-set cpo&vim
-
 " ====== REDIR ======= "
 function! redir#Redir(cmd, rng, start, end) abort
   for win in range(1, winnr('$'))
@@ -30,10 +27,5 @@ function! redir#Redir(cmd, rng, start, end) abort
   setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
   call setline(1, output)
 endfunction
-
-command! -nargs=1 -complete=command -bar -range Redir silent call Redir(<q-args>, <range>, <line1>, <line2>)
-
-let &cpo = s:cpo_save
-unlet s:cpo_save
 
 " vim:set ft=vim sw=2 sts=2:
