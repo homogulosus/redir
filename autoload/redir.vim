@@ -1,4 +1,13 @@
-" ====== REDIR ======= "
+" ====== REDIR ===============================================================
+" Filename: /autoload/redir.vim
+" Author: homogulosus
+" License: same as neovim
+" Last Change: Tue Jul  7 15:45:19 EDT 2020
+" ============================================================================
+
+let s:save_cpo = &cpo
+set cpo&vim
+
 function! redir#Redir(cmd, rng, start, end) abort
   for win in range(1, winnr('$'))
     if getwinvar(win, 'scratch')
@@ -27,5 +36,8 @@ function! redir#Redir(cmd, rng, start, end) abort
   setlocal buftype=nofile bufhidden=wipe nobuflisted noswapfile
   call setline(1, output)
 endfunction
+
+let &cpo = s:save_cpo
+unlet s:save_cpo
 
 " vim:set ft=vim sw=2 sts=2:
