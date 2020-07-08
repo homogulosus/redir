@@ -1,14 +1,13 @@
-*Redir.txt*                                   Redir Help
+*Redir.txt*                                                     Redir Help
 
 Author: homogulosus
 License: same as neovim
 
-This plugin redirects the output of vim or external
-commands to a new buffer.
+This plugin redirects the output of vim or external commands to a new buffer.
 
-COMMANDS                                *Redir* *Redir-cmd*
+COMMANDS                                                  *Redir* *Redir-cmd*
 
-:Redir{!}               That's it.
+    :Redir{!}               That's it.
 
 
 vim:tw=78:et:ft=help:norl:
